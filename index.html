@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NEXT LEVEL — волейбол в Москве для любого уровня. Игровые и тренировки в лучших залах города. Приходи один — уходи с командой. Записывайся онлайн!">
+  <meta name="keywords" content="волейбол Москва, волейбольные тренировки, волейбол для начинающих, волейбол записаться, игровой волейбол, Next Level волейбол">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="NEXT LEVEL">
+
+  <meta property="og:title" content="NEXT LEVEL — Волейбол в который хочется возвращаться">
+  <meta property="og:description" content="Игровые и тренировки в Москве для любого уровня. 200+ игроков уже с нами. Записывайся онлайн!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nextlevel-vb.ru/">
+  <meta property="og:site_name" content="NEXT LEVEL">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:image" content="https://nextlevel-vb.ru/hero.png">
+  <meta property="og:image:alt" content="Волейбольная тренировка NEXT LEVEL — игроки в зале">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NEXT LEVEL — Волейбол в который хочется возвращаться">
+  <meta name="twitter:description" content="Игровые и тренировки в Москве для любого уровня. 200+ игроков уже с нами.">
+  <meta name="twitter:image" content="https://nextlevel-vb.ru/hero.png">
+
+  <meta name="theme-color" content="#F5A623">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="canonical" href="https://nextlevel-vb.ru/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsOrganization",
+    "name": "NEXT LEVEL",
+    "description": "Волейбольный клуб в Москве для любого уровня. Игровые и тренировки для любого уровня — новичок, средний, средний+.",
+    "url": "https://nextlevel-vb.ru",
+    "logo": "https://nextlevel-vb.ru/logo.png",
+    "image": "https://nextlevel-vb.ru/hero.png",
+    "sport": "Волейбол",
+    "areaServed": "Москва",
+    "sameAs": [
+      "https://t.me/next_level_volley",
+      "https://www.instagram.com/next_level_volley_msk/",
+      "https://www.tiktok.com/@next_level_volley",
+      "https://vk.ru/next_level_volley"
+    ],
+    "location": [
+      {
+        "@type": "Place",
+        "name": "Зал у м. Шоссе Энтузиастов",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Москва",
+          "addressCountry": "RU",
+          "description": "м. Шоссе Энтузиастов"
+        }
+      },
+      {
+        "@type": "Place",
+        "name": "Зал у м. Нижегородская",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Москва",
+          "addressCountry": "RU",
+          "description": "м. Нижегородская"
+        }
+      },
+      {
+        "@type": "Place",
+        "name": "Зал у м. Кожуховская",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Москва",
+          "addressCountry": "RU",
+          "description": "м. Кожуховская"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <title>NEXT LEVEL — Волейбол в Москве | Тренировки и игры для любого уровня</title>
+
+  <link rel="preload" href="hero.webp" as="image" fetchpriority="high" type="image/webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="/" class="logo" aria-label="NEXT LEVEL — на главную">
+        <picture>
+          <source srcset="logo.webp" type="image/webp">
+          <img src="logo.png" alt="NEXT LEVEL — Волейбол в Москве" class="logo__img" width="52" height="52">
+        </picture>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#about">О нас</a></li>
+          <li><a class="nav__link" href="#schedule">Расписание</a></li>
+          <li><a class="nav__link" href="#corporate">Корпоративным клиентам</a></li>
+          <li><a class="nav__link" href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <a href="https://t.me/next_level_volley" target="_blank" rel="noopener noreferrer" class="btn btn--primary header__cta">
+        Записаться на игру <span class="btn__arrow">→</span>
+      </a>
+
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <nav aria-label="Мобильная навигация">
+        <ul class="mobile-menu__list">
+          <li><a class="mobile-menu__link" href="#about">О нас</a></li>
+          <li><a class="mobile-menu__link" href="#schedule">Расписание</a></li>
+          <li><a class="mobile-menu__link" href="#corporate">Корпоративным клиентам</a></li>
+          <li><a class="mobile-menu__link" href="#faq">FAQ</a></li>
+        </ul>
+        <a href="https://t.me/next_level_volley" target="_blank" rel="noopener noreferrer" class="btn btn--primary mobile-menu__cta">Записаться на игру →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" aria-label="Главный экран">
+      <div class="hero__bg">
+        <div class="hero__overlay"></div>
+        <div class="hero__particles" id="particles"></div>
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__title">
+            <span class="hero__title-white reveal-up">ВОЛЕЙБОЛ,</span>
+            <span class="hero__title-white reveal-up delay-1">В КОТОРЫЙ</span>
+            <span class="hero__title-accent reveal-up delay-2">ХОЧЕТСЯ</span>
+            <span class="hero__title-accent reveal-up delay-3">ВОЗВРАЩАТЬСЯ</span>
+          </h1>
+          <p class="hero__sub reveal-up delay-4">Игровые и тренировки в Москве<br>для любого уровня</p>
+          <div class="hero__actions reveal-up delay-5">
+            <a href="https://t.me/next_level_volley" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--large">Записаться на игру →</a>
+          </div>
+        </div>
+        <div class="hero__image-wrap">
+          <div class="hero__image-placeholder">
+            <picture>
+              <source srcset="hero.webp" type="image/webp">
+              <img src="hero.png" alt="Волейбольная тренировка NEXT LEVEL — игроки в зале" class="hero__photo" loading="eager" decoding="async" fetchpriority="high">
+            </picture>
+            <div class="hero__photo-overlay"></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll-hint">
+        <span>Листай вниз</span>
+        <div class="hero__scroll-arrow">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M10 4v12M4 10l6 6 6-6" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section" id="about" aria-label="О нас">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__content reveal-left">
+            <h2 class="about__title">Здесь не нужно<br>приходить своей компанией.</h2>
+            <p class="about__accent">Просто записываешься.<br>Приходишь. Играешь.</p>
+            <p class="about__text">Мы собираем классных людей, у которых одна любовь — волейбол. Приходи один или с друзьями — здесь тебе всегда рады.</p>
+          </div>
+          <div class="about__media-wrap reveal-right">
+            <div class="reel-frame">
+              <div class="reel-frame__phone">
+                <div class="reel-frame__screen">
+                  <video
+                    class="reel-video"
+                    id="reelVideo"
+                    src="reel.mp4"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    aria-label="Видео с тренировки NEXT LEVEL"
+                  ></video>
+                  <button class="reel-mute-btn" id="reelMuteBtn" aria-label="Включить звук">
+                    <svg class="icon-muted" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                      <line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                      <line x1="17" y1="9" x2="23" y2="15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                    <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:none">
+                      <path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                      <path d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                  </button>
+                  <div class="reel-label">
+                    <span>Вот так проходят наши игровые</span>
+                  </div>
+                </div>
+              </div>
+              <div class="reel-frame__glow" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats reveal-up">
+          <div class="stats__counter">
+            <div class="stats__main">
+              <span class="stats__number" data-target="200">0</span>
+              <span class="stats__plus">+</span>
+            </div>
+            <p class="stats__label">человек уже играют вместе с нами</p>
+          </div>
+          <div class="stats__features">
+            <div class="stats__feature">
+              <div class="stats__icon">
+                <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                  <rect x="4" y="8" width="32" height="24" rx="3" stroke="#F5A623" stroke-width="2"/>
+                  <rect x="10" y="16" width="20" height="8" rx="1" stroke="#F5A623" stroke-width="1.5"/>
+                  <line x1="4" y1="20" x2="10" y2="20" stroke="#F5A623" stroke-width="2"/>
+                  <line x1="30" y1="20" x2="36" y2="20" stroke="#F5A623" stroke-width="2"/>
+                </svg>
+              </div>
+              <span>Хорошие залы</span>
+            </div>
+            <div class="stats__feature">
+              <div class="stats__icon">
+                <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                  <circle cx="20" cy="20" r="14" stroke="#F5A623" stroke-width="2"/>
+                  <path d="M14 20 Q20 12 26 20 Q20 28 14 20Z" stroke="#F5A623" stroke-width="1.5" fill="none"/>
+                  <line x1="20" y1="6" x2="20" y2="34" stroke="#F5A623" stroke-width="1.5"/>
+                  <line x1="6" y1="20" x2="34" y2="20" stroke="#F5A623" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <span>Мячи Mikasa</span>
+            </div>
+            <div class="stats__feature">
+              <div class="stats__icon">
+                <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                  <path d="M20 8 L22 14 L28 14 L23 18 L25 24 L20 20 L15 24 L17 18 L12 14 L18 14 Z" stroke="#F5A623" stroke-width="1.5" fill="none"/>
+                  <path d="M10 30 Q20 26 30 30" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/>
+                  <circle cx="10" cy="34" r="2" fill="#F5A623"/>
+                  <circle cx="20" cy="32" r="2" fill="#F5A623"/>
+                  <circle cx="30" cy="34" r="2" fill="#F5A623"/>
+                </svg>
+              </div>
+              <span>Музыка</span>
+            </div>
+            <div class="stats__feature">
+              <div class="stats__icon">
+                <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                  <circle cx="14" cy="16" r="5" stroke="#F5A623" stroke-width="1.5"/>
+                  <circle cx="26" cy="16" r="5" stroke="#F5A623" stroke-width="1.5"/>
+                  <path d="M6 32 C6 26 10 22 14 22" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M34 32 C34 26 30 22 26 22" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M14 22 C16 24 24 24 26 22" stroke="#F5A623" stroke-width="1.5"/>
+                  <path d="M14 32 C14 28 26 28 26 32" stroke="#F5A623" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <span>Дружеская<br>атмосфера</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="upcoming section" id="upcoming" aria-label="Ближайшие тренировки">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title reveal-up">Ближайшие тренировки</h2>
+          <a href="#schedule" class="section-link reveal-up">Смотреть всё расписание →</a>
+        </div>
+
+        <div class="training-cards" id="upcomingCards"></div>
+      </div>
+    </section>
+
+    <section class="corporate section" id="corporate" aria-label="Корпоративным клиентам">
+      <div class="container">
+        <div class="section-header">
+          <div class="reveal-left">
+            <h2 class="section-title">Корпоративным клиентам</h2>
+            <p class="section-sub">Спорт объединяет! Поможем вашей команде стать сильнее и сплочённее.</p>
+          </div>
+          <a href="https://t.me/fusion_1" target="_blank" rel="noopener noreferrer" class="btn btn--outline reveal-right">Оставить заявку →</a>
+        </div>
+
+        <div class="corporate__grid">
+          <div class="corporate__card reveal-up">
+            <div class="corporate__icon">
+              <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <circle cx="24" cy="12" r="8" stroke="#F5A623" stroke-width="2"/>
+                <path d="M8 40 C8 32 15 26 24 26 C33 26 40 32 40 40" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="24" cy="12" r="4" fill="#F5A623" opacity="0.3"/>
+              </svg>
+            </div>
+            <h3 class="corporate__title">Корпоративные тренировки</h3>
+            <p class="corporate__text">Регулярные тренировки для сотрудников любого уровня. Здоровье, энергия и командный дух.</p>
+          </div>
+
+          <div class="corporate__card reveal-up delay-1">
+            <div class="corporate__icon">
+              <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <path d="M24 6 L28 18 H40 L30 26 L34 38 L24 30 L14 38 L18 26 L8 18 H20 Z" stroke="#F5A623" stroke-width="2" fill="none"/>
+                <path d="M24 12 L26 18 H32 L27 22 L29 28 L24 24 L19 28 L21 22 L16 18 H22 Z" fill="#F5A623" opacity="0.2"/>
+              </svg>
+            </div>
+            <h3 class="corporate__title">Корпоративные турниры</h3>
+            <p class="corporate__text">Организация волейбольных турниров между компаниями. Азарт, эмоции и незабываемая атмосфера.</p>
+          </div>
+
+          <div class="corporate__card reveal-up delay-2">
+            <div class="corporate__icon">
+              <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <circle cx="18" cy="14" r="6" stroke="#F5A623" stroke-width="2"/>
+                <circle cx="30" cy="14" r="6" stroke="#F5A623" stroke-width="2"/>
+                <path d="M6 38 C6 30 11 26 18 26" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/>
+                <path d="M42 38 C42 30 37 26 30 26" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/>
+                <path d="M18 26 C20 28 28 28 30 26" stroke="#F5A623" stroke-width="2"/>
+                <path d="M18 38 C18 32 30 32 30 38" stroke="#F5A623" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3 class="corporate__title">Тимбилдинг</h3>
+            <p class="corporate__text">Спортивные игры и активности, которые помогут строить доверие и укреплять команду.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="schedule section" id="schedule" aria-label="Расписание тренировок">
+      <div class="container">
+        <div class="schedule__header">
+          <div class="reveal-left">
+            <h2 class="section-title">Всё расписание</h2>
+            <p class="section-sub">Выбери удобное время и присоединяйся к игре!</p>
+          </div>
+        </div>
+
+        <div class="schedule__filters reveal-up">
+          <select class="filter-select" id="filterMetro" aria-label="Выбрать метро">
+            <option value="">Любое метро</option>
+            <option value="shosse">м. Шоссе Энтузиастов</option>
+            <option value="nizh">м. Нижегородская</option>
+            <option value="kozh">м. Кожуховская</option>
+          </select>
+          <select class="filter-select" id="filterDay" aria-label="Выбрать день">
+            <option value="">Любой день</option>
+            <option value="mon">Понедельник</option>
+            <option value="tue">Вторник</option>
+            <option value="wed">Среда</option>
+            <option value="thu">Четверг</option>
+            <option value="fri">Пятница</option>
+            <option value="sat">Суббота</option>
+            <option value="sun">Воскресенье</option>
+          </select>
+        </div>
+
+        <div class="schedule__week-nav reveal-up">
+          <button class="week-nav-btn" id="prevWeek" aria-label="Предыдущая неделя">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <span class="week-range" id="weekRange">20 – 26 мая</span>
+          <button class="week-nav-btn" id="nextWeek" aria-label="Следующая неделя">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+
+        <div class="schedule__grid" id="scheduleGrid"></div>
+
+        <div class="session-detail" id="sessionDetail" aria-hidden="true">
+          <button class="session-detail__close" id="closeDetail" aria-label="Закрыть">×</button>
+          <div class="session-detail__content" id="sessionDetailContent"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq section" id="faq" aria-label="Часто задаваемые вопросы">
+      <div class="container">
+        <h2 class="section-title reveal-up">Ответы на частые вопросы</h2>
+        <div class="faq__grid">
+          <div class="faq__col">
+            <div class="faq__item reveal-up">
+              <button class="faq__question" aria-expanded="false">
+                Нужно ли приходить с командой?
+                <span class="faq__icon">+</span>
+              </button>
+              <div class="faq__answer">
+                <p>Нет! Мы специально собираем людей с разных сторон — у нас всегда найдётся место в команде. Приходи один, познакомишься с новыми людьми прямо на площадке.</p>
+              </div>
+            </div>
+            <div class="faq__item reveal-up delay-1">
+              <button class="faq__question" aria-expanded="false">
+                Как записаться на тренировку?
+                <span class="faq__icon">+</span>
+              </button>
+              <div class="faq__answer">
+                <p>Заходи в нашу группу в Telegram, находи пост с нужной тренировкой и открывай комментарии. Скопируй последний список участников, добавь своё имя и отправь — готово, ты в игре.</p>
+              </div>
+            </div>
+            <div class="faq__item reveal-up delay-2">
+              <button class="faq__question" aria-expanded="false">
+                Как проходит оплата?
+                <span class="faq__icon">+</span>
+              </button>
+              <div class="faq__answer">
+                <p>Оплатить нужно за 4 часа до игры по реквизитам, которые указаны в посте с тренировкой — их найдёшь в нашей группе в Telegram.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq__col">
+            <div class="faq__item reveal-up">
+              <button class="faq__question" aria-expanded="false">
+                Какой уровень игроков?
+                <span class="faq__icon">+</span>
+              </button>
+              <div class="faq__answer">
+                <p>У нас есть игры для разных уровней: новичок, средний и средний+. Выбирай подходящий — никто не будет ругаться за ошибки!</p>
+              </div>
+            </div>
+            <div class="faq__item reveal-up delay-1">
+              <button class="faq__question" aria-expanded="false">
+                Что если я не смогу прийти?
+                <span class="faq__icon">+</span>
+              </button>
+              <div class="faq__answer">
+                <p>Выписаться нужно так же, как и записался — в комментариях к посту в Telegram, не позднее чем за 4 часа до игры. При отмене позже — штраф в размере стоимости тренировки.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner section" id="signup" aria-label="Записаться на игру">
+      <div class="container">
+        <div class="cta-banner__inner reveal-up">
+          <div class="cta-banner__content">
+            <h2 class="cta-banner__title">Сыграем уже на этой неделе?</h2>
+            <p class="cta-banner__sub">Ждём тебя на площадке!</p>
+          </div>
+          <a href="https://t.me/next_level_volley" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--large cta-banner__btn">Записаться на игру →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" aria-label="Подвал сайта">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="/" class="logo" aria-label="NEXT LEVEL — на главную">
+            <picture>
+              <source srcset="logo.webp" type="image/webp">
+              <img src="logo.png" alt="NEXT LEVEL — Волейбол в Москве" class="logo__img logo__img--footer" width="160" height="160">
+            </picture>
+          </a>
+        </div>
+
+        <nav class="footer__nav" aria-label="Навигация">
+          <ul>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#schedule">Расписание</a></li>
+            <li><a href="#corporate">Корпоративным клиентам</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__social">
+          <p class="footer__social-title">Мы в соцсетях</p>
+          <div class="footer__social-links">
+            <a href="https://t.me/next_level_volley" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.01 9.473c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.873.748z"/></svg>
+            </a>
+            <a href="https://vk.ru/next_level_volley" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="ВКонтакте">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.587-1.496c.598-.19 1.365 1.26 2.179 1.815.615.42 1.082.328 1.082.328l2.172-.03s1.135-.07.597-.963c-.044-.073-.314-.661-1.618-1.869-1.364-1.263-1.181-1.059.462-3.243.998-1.332 1.396-2.145 1.271-2.493-.12-.332-.855-.244-.855-.244l-2.443.015s-.181-.025-.315.056c-.132.079-.217.262-.217.262s-.386 1.026-.9 1.898c-1.085 1.844-1.52 1.942-1.697 1.827-.412-.267-.309-1.073-.309-1.646 0-1.79.271-2.535-.528-2.727-.265-.064-.46-.106-1.137-.113-.869-.009-1.603.003-2.019.206-.277.134-.49.433-.36.45.161.021.525.098.718.361.249.341.24 1.107.24 1.107s.143 2.107-.333 2.369c-.327.178-.775-.185-1.737-1.849-.493-.854-.866-1.8-.866-1.8s-.072-.176-.202-.271c-.157-.115-.376-.151-.376-.151l-2.322.015s-.349.01-.477.162c-.114.136-.009.417-.009.417s1.818 4.252 3.877 6.396c1.888 1.97 4.031 1.842 4.031 1.842h.972z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/next_level_volley_msk/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@next_level_volley" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.67a8.27 8.27 0 004.83 1.54V6.69a4.85 4.85 0 01-1.06 0z"/></svg>
+            </a>
+          </div>
+          <a href="https://t.me/fusion_1" target="_blank" rel="noopener noreferrer" class="btn btn--telegram">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.01 9.473c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.873.748z"/></svg>
+            Написать в Telegram
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© NEXT LEVEL</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

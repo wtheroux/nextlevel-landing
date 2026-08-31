@@ -23,8 +23,8 @@ const GYM_PHOTOS = {
 
 const PRICES = {
   'м. Шоссе Энтузиастов': 700,
-  'м. Нижегородская':     800,
-  'м. Кожуховская':       750,
+  'м. Нижегородская':     900,
+  'м. Кожуховская':       900,
 };
 
 const SESSIONS = [
@@ -35,7 +35,7 @@ const SESSIONS = [
   { id: 5, dayIndex: 3, day: 'Чт', dayFull: 'Четверг',     time: '20:00 – 22:00', location: 'м. Нижегородская',     comingSoon: false },
   { id: 6, dayIndex: 6, day: 'Вс', dayFull: 'Воскресенье', time: '18:00 – 20:00', location: 'м. Нижегородская',     comingSoon: false },
   { id: 7, dayIndex: 6, day: 'Вс', dayFull: 'Воскресенье', time: '20:00 – 22:00', location: 'м. Нижегородская',     comingSoon: false, desc: 'Игра для тех, кто знает счёт очкам. Работаем в расстановках 5/1 и 4/2 — системный приём, атаки из нескольких зон и командная тактика без скидок на уровень.' },
-  { id: 8, dayIndex: 4, day: 'Пт', dayFull: 'Пятница',     time: '20:00 – 22:00', location: 'м. Кожуховская',       comingSoon: false },
+  { id: 8, dayIndex: 4, day: 'Пт', dayFull: 'Пятница',     time: '19:00 – 21:00', location: 'м. Кожуховская',       comingSoon: false },
 ];
 
 const DAY_NAMES = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];

@@ -28,14 +28,12 @@ const PRICES = {
 };
 
 const SESSIONS = [
-  { id: 1, dayIndex: 0, day: 'Пн', dayFull: 'Понедельник', time: '21:00 – 23:00', location: 'м. Шоссе Энтузиастов', locationNote: 'новый зал', comingSoon: false },
-  { id: 2, dayIndex: 1, day: 'Вт', dayFull: 'Вторник',     time: null,             location: 'м. Шоссе Энтузиастов', locationNote: 'новый зал', comingSoon: true  },
-  { id: 3, dayIndex: 3, day: 'Чт', dayFull: 'Четверг',     time: null,             location: 'м. Шоссе Энтузиастов', locationNote: 'новый зал', comingSoon: true  },
-  { id: 4, dayIndex: 1, day: 'Вт', dayFull: 'Вторник',     time: '20:00 – 22:00', location: 'м. Нижегородская',     comingSoon: false, desc: 'Игра для тех, кто знает счёт очкам. Работаем в расстановках 5/1 и 4/2 — системный приём, атаки из нескольких зон и командная тактика без скидок на уровень.' },
+  { id: 1, dayIndex: 0, day: 'Пн', dayFull: 'Понедельник', time: '21:00 – 23:00', location: 'м. Шоссе Энтузиастов', comingSoon: false },
+  { id: 4, dayIndex: 1, day: 'Вт', dayFull: 'Вторник',     time: '20:00 – 22:00', location: 'м. Нижегородская',     comingSoon: false, price: 1300, badge: 'С тренером', desc: 'Тренировка с тренером — Дмитрий Стеблев, МС по волейболу, экс-игрок ВК «Парма». Разбор техники и игровые связки, любой уровень.' },
   { id: 5, dayIndex: 3, day: 'Чт', dayFull: 'Четверг',     time: '20:00 – 22:00', location: 'м. Нижегородская',     comingSoon: false },
   { id: 6, dayIndex: 6, day: 'Вс', dayFull: 'Воскресенье', time: '18:00 – 20:00', location: 'м. Нижегородская',     comingSoon: false },
-  { id: 7, dayIndex: 6, day: 'Вс', dayFull: 'Воскресенье', time: '20:00 – 22:00', location: 'м. Нижегородская',     comingSoon: false, desc: 'Игра для тех, кто знает счёт очкам. Работаем в расстановках 5/1 и 4/2 — системный приём, атаки из нескольких зон и командная тактика без скидок на уровень.' },
-  { id: 8, dayIndex: 4, day: 'Пт', dayFull: 'Пятница',     time: '19:00 – 21:00', location: 'м. Кожуховская',       comingSoon: false },
+  { id: 7, dayIndex: 6, day: 'Вс', dayFull: 'Воскресенье', time: '20:00 – 22:00', location: 'м. Нижегородская',     comingSoon: false, desc: 'Уровень средний/средний+. Работаем в расстановках 5/1 и 4/2 — системный приём, атаки из нескольких зон и командная тактика без скидок на уровень.' },
+  { id: 8, dayIndex: 4, day: 'Пт', dayFull: 'Пятница',     time: '19:00 – 21:00', location: 'м. Кожуховская',       comingSoon: false, desc: 'Игра для тех, кто знает счёт очкам. Работаем в расстановках 5/1 и 4/2 — системный приём, атаки из нескольких зон и командная тактика без скидок на уровень.' },
 ];
 
 const DAY_NAMES = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
@@ -183,6 +181,7 @@ function renderUpcomingCards() {
           <div class="training-card__img-overlay"></div>
         </div>
         <div class="training-card__body">
+          ${s.badge ? `<div class="training-card__badge">${s.badge}</div>` : ''}
           <div class="training-card__day">${s.dayFull}</div>
           <div class="training-card__date">${dateStr}</div>
           <div class="training-card__meta">
@@ -247,6 +246,7 @@ function renderScheduleGrid() {
           `;
           return `
             <div class="schedule-session" data-id="${s.id}" role="button" tabindex="0" aria-label="${s.dayFull} ${s.time} ${s.location}">
+              ${s.badge ? `<div class="schedule-session__badge">${s.badge}</div>` : ''}
               <div class="schedule-session__time">${s.time}</div>
               <div class="schedule-session__location">${iconLocationSm()} ${s.location}${s.locationNote ? `, <em>${s.locationNote}</em>` : ''}</div>
               <div class="schedule-session__btn">Записаться</div>
@@ -308,7 +308,7 @@ function openSessionDetail(session) {
     </div>
     <div class="session-detail__section">
       <p class="session-detail__section-title">Стоимость</p>
-      <div class="session-detail__price">${PRICES[session.location] || 800} ₽</div>
+      <div class="session-detail__price">${session.price || PRICES[session.location] || 800} ₽</div>
     </div>
     <div class="session-detail__actions">
       <button class="btn btn--primary" onclick="openSignup(event)">Записаться</button>

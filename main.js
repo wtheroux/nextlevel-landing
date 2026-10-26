@@ -19,21 +19,24 @@ const GYM_PHOTOS = {
   'м. Шоссе Энтузиастов': 'gym-shosse.png',
   'м. Нижегородская':     'gym-nizh.png',
   'м. Кожуховская':       'gym-kozh.png',
+  'м. Марьино':           'gym-marino.png',
 };
 
 const PRICES = {
   'м. Шоссе Энтузиастов': 700,
   'м. Нижегородская':     900,
   'м. Кожуховская':       900,
+  'м. Марьино':           1000,
 };
 
 const SESSIONS = [
   { id: 1, dayIndex: 0, day: 'Пн', dayFull: 'Понедельник', time: '21:00 – 23:00', location: 'м. Шоссе Энтузиастов', comingSoon: false },
   { id: 4, dayIndex: 1, day: 'Вт', dayFull: 'Вторник',     time: '20:00 – 22:00', location: 'м. Нижегородская',     comingSoon: false, price: 1300, badge: 'С тренером', desc: 'Тренировка с тренером — Дмитрий Стеблев, МС по волейболу, экс-игрок ВК «Парма». Разбор техники и игровые связки, любой уровень.' },
+  { id: 9, dayIndex: 1, day: 'Вт', dayFull: 'Вторник',     time: '20:00 – 22:00', location: 'м. Марьино',           comingSoon: false, desc: 'Уровень средний/средний+. Просторный зал с трибунами. Работаем в расстановках 5/1 и 4/2 — системный приём, атаки из нескольких зон и командная тактика без скидок на уровень.' },
   { id: 5, dayIndex: 3, day: 'Чт', dayFull: 'Четверг',     time: '20:00 – 22:00', location: 'м. Нижегородская',     comingSoon: false },
   { id: 6, dayIndex: 6, day: 'Вс', dayFull: 'Воскресенье', time: '18:00 – 20:00', location: 'м. Нижегородская',     comingSoon: false },
   { id: 7, dayIndex: 6, day: 'Вс', dayFull: 'Воскресенье', time: '20:00 – 22:00', location: 'м. Нижегородская',     comingSoon: false, desc: 'Уровень средний/средний+. Работаем в расстановках 5/1 и 4/2 — системный приём, атаки из нескольких зон и командная тактика без скидок на уровень.' },
-  { id: 8, dayIndex: 4, day: 'Пт', dayFull: 'Пятница',     time: '19:00 – 21:00', location: 'м. Кожуховская',       comingSoon: false, desc: 'Игра для тех, кто знает счёт очкам. Работаем в расстановках 5/1 и 4/2 — системный приём, атаки из нескольких зон и командная тактика без скидок на уровень.' },
+  { id: 8, dayIndex: 4, day: 'Пт', dayFull: 'Пятница',     time: '19:00 – 21:00', location: 'м. Кожуховская',       comingSoon: false },
 ];
 
 const DAY_NAMES = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
@@ -158,15 +161,24 @@ function renderUpcomingCards() {
   const container = document.getElementById('upcomingCards');
   if (!container) return;
 
-  const dates = getWeekDates(0);
+  // Ближайшие 4 тренировки на 7 дней вперёд: сегодняшние — пока не начались
+  const now = new Date();
+  const upcoming = [];
+  for (let d = 0; d < 7; d++) {
+    const date = new Date(now.getFullYear(), now.getMonth(), now.getDate() + d);
+    const dayIndex = (date.getDay() + 6) % 7;
+    SESSIONS.filter(s => s.dayIndex === dayIndex && !s.comingSoon).forEach(s => {
+      const [h, m] = s.time.split('–')[0].trim().split(':').map(Number);
+      const start = new Date(date);
+      start.setHours(h, m, 0, 0);
+      if (start > now) upcoming.push({ s, date, start });
+    });
+  }
+  upcoming.sort((a, b) => a.start - b.start || a.s.id - b.s.id);
+  const cards = upcoming.slice(0, 4);
 
-  const targetDays = [0, 1, 3, 4];
-  const cards = targetDays.map(di =>
-    SESSIONS.find(s => s.dayIndex === di && !s.comingSoon)
-  ).filter(Boolean);
-
-  container.innerHTML = cards.map((s, i) => {
-    const dateStr = fmtDate(dates[s.dayIndex]);
+  container.innerHTML = cards.map(({ s, date }, i) => {
+    const dateStr = fmtDate(date);
     const photo = GYM_PHOTOS[s.location];
     return `
       <article class="training-card" data-id="${s.id}" style="transition-delay:${i * 0.1}s">
@@ -208,7 +220,7 @@ function getFilteredSessions() {
   const metro = document.getElementById('filterMetro')?.value || '';
   const day   = document.getElementById('filterDay')?.value || '';
 
-  const metroMap = { shosse: 'м. Шоссе Энтузиастов', nizh: 'м. Нижегородская', kozh: 'м. Кожуховская' };
+  const metroMap = { shosse: 'м. Шоссе Энтузиастов', nizh: 'м. Нижегородская', kozh: 'м. Кожуховская', marino: 'м. Марьино' };
   const dayMap   = { mon:0, tue:1, wed:2, thu:3, fri:4, sat:5, sun:6 };
 
   return SESSIONS.filter(s => {

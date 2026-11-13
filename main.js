@@ -1,5 +1,7 @@
 'use strict';
 
+const APP_URL = 'https://app.nextlevel-msk.ru/';
+
 const reelVideo = document.getElementById('reelVideo');
 const reelMuteBtn = document.getElementById('reelMuteBtn');
 
@@ -23,17 +25,17 @@ const GYM_PHOTOS = {
 };
 
 const PRICES = {
-  'м. Шоссе Энтузиастов': 700,
-  'м. Нижегородская':     900,
-  'м. Кожуховская':       900,
-  'м. Марьино':           1000,
+  'м. Шоссе Энтузиастов': 850,
+  'м. Нижегородская':     1100,
+  'м. Кожуховская':       1300,
+  'м. Марьино':           1200,
 };
 
 const SESSIONS = [
   { id: 1, dayIndex: 0, day: 'Пн', dayFull: 'Понедельник', time: '21:00 – 23:00', location: 'м. Шоссе Энтузиастов', comingSoon: false },
-  { id: 4, dayIndex: 1, day: 'Вт', dayFull: 'Вторник',     time: '20:00 – 22:00', location: 'м. Нижегородская',     comingSoon: false, price: 1300, badge: 'С тренером', desc: 'Тренировка с тренером — Дмитрий Стеблев, МС по волейболу, экс-игрок ВК «Парма». Разбор техники и игровые связки, любой уровень.' },
+  { id: 4, dayIndex: 1, day: 'Вт', dayFull: 'Вторник',     time: '20:00 – 22:00', location: 'м. Нижегородская',     comingSoon: false, price: 1500, badge: 'С тренером', desc: 'Тренировка с тренером — Дмитрий Стеблев, МС по волейболу, экс-игрок ВК «Парма». Разбор техники и игровые связки, любой уровень.' },
   { id: 9, dayIndex: 1, day: 'Вт', dayFull: 'Вторник',     time: '20:00 – 22:00', location: 'м. Марьино',           comingSoon: false, desc: 'Уровень средний/средний+. Просторный зал с трибунами. Работаем в расстановках 5/1 и 4/2 — системный приём, атаки из нескольких зон и командная тактика без скидок на уровень.' },
-  { id: 5, dayIndex: 3, day: 'Чт', dayFull: 'Четверг',     time: '20:00 – 22:00', location: 'м. Нижегородская',     comingSoon: false },
+  { id: 5, dayIndex: 3, day: 'Чт', dayFull: 'Четверг',     time: '20:00 – 22:00', location: 'м. Нижегородская',     comingSoon: false, price: 950, capacity: 14 },
   { id: 6, dayIndex: 6, day: 'Вс', dayFull: 'Воскресенье', time: '18:00 – 20:00', location: 'м. Нижегородская',     comingSoon: false },
   { id: 7, dayIndex: 6, day: 'Вс', dayFull: 'Воскресенье', time: '20:00 – 22:00', location: 'м. Нижегородская',     comingSoon: false, desc: 'Уровень средний/средний+. Работаем в расстановках 5/1 и 4/2 — системный приём, атаки из нескольких зон и командная тактика без скидок на уровень.' },
   { id: 8, dayIndex: 4, day: 'Пт', dayFull: 'Пятница',     time: '19:00 – 21:00', location: 'м. Кожуховская',       comingSoon: false },
@@ -319,11 +321,11 @@ function openSessionDetail(session) {
       </ul>
     </div>
     <div class="session-detail__section">
-      <p class="session-detail__section-title">Стоимость</p>
-      <div class="session-detail__price">${session.price || PRICES[session.location] || 800} ₽</div>
+      <p class="session-detail__section-title">Стоимость · до ${session.capacity || 12} человек</p>
+      <div class="session-detail__price">${session.price || PRICES[session.location]} ₽</div>
     </div>
     <div class="session-detail__actions">
-      <button class="btn btn--primary" onclick="openSignup(event)">Записаться</button>
+      <a href="${APP_URL}" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Записаться в приложении</a>
       <a href="https://t.me/fusion_1" target="_blank" rel="noopener noreferrer" class="btn btn--outline" onclick="closeSessionDetail()">Есть вопрос?</a>
     </div>
   `;
@@ -362,7 +364,7 @@ document.querySelectorAll('.faq__question').forEach(btn => {
 function openSignup(e) {
   e && e.stopPropagation();
   closeSessionDetail();
-  window.open('https://t.me/next_level_volley', '_blank', 'noopener,noreferrer');
+  window.open(APP_URL, '_blank', 'noopener,noreferrer');
 }
 window.openSignup = openSignup;
 window.closeSessionDetail = closeSessionDetail;

@@ -1,6 +1,6 @@
 'use strict';
 
-const APP_URL = 'https://app.nextlevel-msk.ru/';
+const APP_URL = window.nextLevelAnalytics?.appUrl() || 'https://app.nextlevel-msk.ru/';
 
 const reelVideo = document.getElementById('reelVideo');
 const reelMuteBtn = document.getElementById('reelMuteBtn');
@@ -364,7 +364,8 @@ document.querySelectorAll('.faq__question').forEach(btn => {
 function openSignup(e) {
   e && e.stopPropagation();
   closeSessionDetail();
-  window.open(APP_URL, '_blank', 'noopener,noreferrer');
+  window.nextLevelAnalytics?.trackCta();
+  window.open(window.nextLevelAnalytics?.appUrl() || APP_URL, '_blank', 'noopener,noreferrer');
 }
 window.openSignup = openSignup;
 window.closeSessionDetail = closeSessionDetail;
